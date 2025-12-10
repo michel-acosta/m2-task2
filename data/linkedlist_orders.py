@@ -1,4 +1,4 @@
-# Importamos Optional para tipos que pueden ser nulos y List para tipar listas
+# Importamos Optional para tipos que pueden ser nulos y List para tipar listas. También dict y Any para tipar pedidos genéricos
 from typing import Optional, List, Dict, Any
 
 # Nodo de la lista enlazada, que contendrá un pedido

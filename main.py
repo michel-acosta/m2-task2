@@ -1,9 +1,7 @@
-from fastapi import FastAPI  # Importamos FastAPI y HTTPException para manejar excepciones
+from fastapi import FastAPI  # Importamos FastAPI para crear la aplicación
 from fastapi import status # Importamos status para códigos de estado HTTP
+from fastapi.exceptions import HTTPException # Importamos HTTPException para manejar errores HTTP
 
-from fastapi.exceptions import HTTPException
-
-from models import product
 from models.product import Product  # Modelo de producto
 from models.order import Order  # Modelo de pedido
 from data.bst_products import product_tree  # Árbol binario de productos
@@ -24,7 +22,7 @@ def create_product(product: Product):
     # Insertar el producto en el árbol binario
     product_tree.insert(product)
     
-    # Devolvemos resultado como vimos en la clase 3
+    # Devolvemos resultado éxitoso
     return {"message":"Product created", "product": product}
 
 # Buscamos un producto por su id
